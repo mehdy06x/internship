@@ -1,18 +1,20 @@
-
-import './App.css'
 import Footer from "./footer";
 import Header from "./header";
+import './App.css';
+import AdminSection from "./adminsection";
 import AligningButtons from "./aligningbuttons";
-import Reports from './Reports';
 
-export default function UserDashboard() {
+export default function AdminDashboard() {
   return (
     <div>
-
       <Header/>
       <AligningButtons/>
-      <Reports/>
+      <AdminSection/>
       <Footer/>
     </div>
   )
+
+
+
 }
+

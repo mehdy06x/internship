@@ -27,15 +27,18 @@
     display: flex;
     margin-left: 250px;
   }
-.secondsection {
-    display: flex ;
+  .secondsection{
+    display: flex;
     flex-direction: column;
     column-gap: 0px ;
 }
+
+
+
+
 .demande {
   display: flex;
   justify-content: center;
-  /*grid-template-columns: repeat(3, minmax(0, 1fr));*/
 }
 h5{
     font-size: 30px;
@@ -58,8 +61,11 @@ h5{
     padding: 0 40px;
   }
   .marg { padding: 20px 40px 0 40px; }
+  .circle { 
+  margin-left: 80px;
+  
 }
-
+}
 @media (max-width: 640px) {
   .demande {
     grid-template-columns: 1fr;
