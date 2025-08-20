@@ -1,13 +1,17 @@
 import './secondpage.css';
 import { useState } from 'react';
 
-export default function ChangeEtat() {
+type ChangeEtatProps = {
+  etat: string;
+  onStatusChange: (newStatus: string) => void;
+};
+
+export default function ChangeEtat({ etat, onStatusChange }: ChangeEtatProps) {
   const [showOptions, setShowOptions] = useState(false);
-  const [selected, setSelected] = useState('Choisir l\'état');
   const options = ["En cours de", "Résolue", "Pas encore"];
 
   function handleSelect(option: string) {
-    setSelected(option);
+    onStatusChange(option);
     setShowOptions(false);
   }
 
@@ -21,15 +25,16 @@ export default function ChangeEtat() {
               style={{
                 padding: "8px 20px",
                 borderRadius: 20,
-              
                 background:
-                  selected === "Résolue" ? "#B1FAB3" :
-                  selected === "En cours de" ? "#FFD580" :
-                  selected === "Pas encore" ? "#FFB3B3" : "#fff",
+                  etat === "Résolue" ? "#B1FAB3" :
+                  etat === "En cours de" ? "#FFD580" :
+                  etat === "Pas encore" ? "#FFB3B3" :
+                  etat === "État du report" ? "#eee" : "#fff",
                 color:
-                  selected === "Résolue" ? "#217a2c" :
-                  selected === "En cours de" ? "#b26a00" :
-                  selected === "Pas encore" ? "#a80000" : "#58A0C8",
+                  etat === "Résolue" ? "#217a2c" :
+                  etat === "En cours de" ? "#b26a00" :
+                  etat === "Pas encore" ? "#a80000" :
+                  etat === "État du report" ? "#888" : "#58A0C8",
                 fontWeight: 500,
                 cursor: "pointer",
                 minWidth: 120,
@@ -41,7 +46,7 @@ export default function ChangeEtat() {
               }}
               onClick={() => setShowOptions((v) => !v)}
             >
-              {selected}
+              {etat === "État du report" ? "État du report (à définir)" : etat}
             </button>
             {showOptions && (
               <div style={{

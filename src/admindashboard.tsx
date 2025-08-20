@@ -2,13 +2,15 @@ import Footer from "./footer";
 import Header from "./header";
 import './App.css';
 import AdminSection from "./adminsection";
-import AligningButtons from "./aligningbuttons";
+import './adminpage.css';
 
 export default function AdminDashboard() {
   return (
     <div>
       <Header/>
-      <AligningButtons/>
+      <div className="admin-dashboard">
+      
+      </div>
       <AdminSection/>
       <Footer/>
     </div>
